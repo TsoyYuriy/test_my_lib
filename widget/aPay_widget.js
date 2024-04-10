@@ -1,4 +1,4 @@
-class CustomPaymentWidget {
+class AsadalPayWidget {
   constructor(configs) {
     this.apiKey = configs.api_key;
     this.orderInfo = configs.order_info;
@@ -6,7 +6,7 @@ class CustomPaymentWidget {
     this.paymentCallback = null;
   }
 
-  closeModal() {
+  closeApayWidget() {
     var closeBtn = document.querySelector(".close");
 
     if (closeBtn) {
@@ -18,9 +18,8 @@ class CustomPaymentWidget {
     }
   }
 
-  openModal() {
-    var modal = document.getElementById("myModal");
-    var iFrame = document.querySelector("iframe");
+  openApayWidget() {
+    var modal = document.getElementById("a-pay-widget");
     modal.style.display = "block";
 
     fetch("http://localhost:8000/api/orders/create-order", {
@@ -36,16 +35,15 @@ class CustomPaymentWidget {
         return response.json();
       })
       .then((data) => {
-        const link = data.iframe_url;
-        iFrame.setAttribute("src", link);
-        iFrame.style.width = "100%";
+        modal.innerHTML = `<div class="modal-content">
+                            <span class="close">&times;</span>
+                            <iframe id="a-pay-iframe" src=${data.iframe_url} frameborder="0" height="652" width="100%"></iframe>
+                          </div>`;
 
         window.addEventListener(
           "message",
           (event) => {
-
             this.isPaid = event.data;
-            // Вызываем функцию обратного вызова для передачи статуса оплаты в приложение
             if (this.paymentCallback) {
               this.paymentCallback(this.isPaid);
             }
@@ -63,4 +61,4 @@ class CustomPaymentWidget {
   }
 }
 
-window.CustomPaymentWidgetInstance = CustomPaymentWidget;
+window.ApayWidget = AsadalPayWidget;
