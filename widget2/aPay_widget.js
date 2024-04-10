@@ -73,4 +73,4 @@ class AsadalPayWidgetInstance {
   }
 }
 
-window.AsadalPayWidgetInstance;
+window.APayWidget = AsadalPayWidgetInstance;
