@@ -9,9 +9,13 @@ class CustomPaymentWidget {
   closeModal() {
     var closeBtn = document.querySelector(".close");
 
-    closeBtn.addEventListener("click", function () {
-      document.getElementById("myModal").style.display = "none";
-    });
+    if (closeBtn) {
+      closeBtn.addEventListener("click", function () {
+        document.getElementById("myModal").style.display = "none";
+      });
+    } else {
+      console.error("Элемент с классом .close не найден");
+    }
   }
 
   openModal() {
