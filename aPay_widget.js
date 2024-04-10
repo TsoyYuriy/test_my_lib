@@ -16,7 +16,7 @@ class CustomPaymentWidget {
 
   openModal() {
     var modal = document.getElementById("myModal");
-    const iFrame = document.querySelector("iframe");
+    var iFrame = document.querySelector("iframe");
     modal.style.display = "block";
 
     fetch("http://localhost:8000/api/orders/create-order", {
@@ -58,3 +58,5 @@ class CustomPaymentWidget {
     this.paymentCallback = callback;
   }
 }
+
+window.CustomPaymentWidgetInstance = CustomPaymentWidget;
