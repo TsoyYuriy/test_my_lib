@@ -1,3 +1,20 @@
+var aPayWidget = document.getElementById("a-pay-widget");
+
+aPayWidget.style.cssText = `
+  display: flex;
+  visibility: hidden;
+  opacity: 0;
+  transition: opacity .3s ease-in-out;
+`;
+
+const closeApayModal = () => {
+  var closeBtn = document.getElementById("a-pay-widget__close");
+  var closeFrame = document.getElementById("a-pay-widget");
+  closeBtn.addEventListener("click", close);
+  closeFrame.addEventListener("click", close);
+};
+
+
 class AsadalPayWidget {
   constructor(configs) {
     this.apiKey = configs.api_key;
@@ -7,20 +24,15 @@ class AsadalPayWidget {
   }
 
   closeApayWidget() {
-    var closeBtn = document.querySelector(".close");
-
-    if (closeBtn) {
-      closeBtn.addEventListener("click", function () {
-        document.getElementById("myModal").style.display = "none";
-      });
-    } else {
-      console.error("Элемент с классом .close не найден");
-    }
+    var closeBtn = document.getElementById("a-pay-widget__close");
+    var closeFrame = document.getElementById("a-pay-widget");
+    closeBtn.addEventListener("click", close);
+    closeFrame.addEventListener("click", close);
   }
 
   openApayWidget() {
-    var modal = document.getElementById("a-pay-widget");
-    modal.style.display = "block";
+    aPayWidget.style.visibility = "visible";
+    aPayWidget.style.opacity = 1;
 
     fetch("http://localhost:8000/api/orders/create-order", {
       method: "POST",
@@ -35,10 +47,10 @@ class AsadalPayWidget {
         return response.json();
       })
       .then((data) => {
-        modal.innerHTML = `<div class="modal-content">
-                            <span class="close">&times;</span>
-                            <iframe id="a-pay-iframe" src=${data.iframe_url} frameborder="0" height="652" width="100%"></iframe>
-                          </div>`;
+        aPayWidget.innerHTML = `<div class="a-pay-widget__content">
+                                  <span class="a-pay-widget__close">&times;</span>
+                                  <iframe id="a-pay-widget__iframe" src=${data.iframe_url} frameborder="0" height="652" width="100%"></iframe>
+                                </div>`;
 
         window.addEventListener(
           "message",

@@ -1,0 +1,42 @@
+.a-pay-widget {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  cursor: pointer;
+  overflow: auto;
+  display: none;
+}
+
+.a-pay-widget__content {
+  background-color: #fefefe;
+  border: 1px solid #888;
+  width: 100%;
+  max-width: 648px;
+  position: relative;
+  margin: auto;
+  cursor: default;
+  border-radius: 15px;
+}
+
+.a-pay-widget__close {
+  background-color: transparent;
+  cursor: pointer;
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  font-size: 22px;
+}
+
+/* .a-pay-widget__close:hover,
+.a-pay-widget__close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+} */
+
+@media screen and (max-width: 700px) {
+  .a-pay-widget__content {
+    width: 70%;
+  }
+}
