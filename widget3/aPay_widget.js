@@ -1,4 +1,4 @@
-var aPayWidget = document.getElementById("a-pay-widget");
+const aPayWidget = document.getElementById("a-pay-widget");
 
 aPayWidget.style.cssText = `
   display: flex;
@@ -8,8 +8,8 @@ aPayWidget.style.cssText = `
 `;
 
 const closeApayModal = () => {
-  var closeBtn = document.getElementById("a-pay-widget__close");
-  var closeFrame = document.getElementById("a-pay-widget");
+  const closeBtn = document.getElementById("a-pay-widget__close");
+  const closeFrame = document.getElementById("a-pay-widget");
   closeBtn.addEventListener("click", close);
   closeFrame.addEventListener("click", close);
 };
@@ -24,8 +24,8 @@ class AsadalPayWidgetInstance {
   }
 
   closeApayWidget() {
-    var closeBtn = document.getElementById("a-pay-widget__close");
-    var closeFrame = document.getElementById("a-pay-widget");
+    const closeBtn = document.getElementById("a-pay-widget__close");
+    const closeFrame = document.getElementById("a-pay-widget");
     closeBtn.addEventListener("click", close);
     closeFrame.addEventListener("click", close);
   }
