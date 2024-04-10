@@ -47,8 +47,8 @@ class AsadalPayWidgetInstance {
         return response.json();
       })
       .then((data) => {
-        aPayWidget.innerHTML = `<div class="a-pay-widget__content">
-                                  <span class="a-pay-widget__close">&times;</span>
+        aPayWidget.innerHTML = `<div class="a-pay-widget__content" id="a-pay-widget__content">
+                                  <span class="a-pay-widget__close" id="a-pay-widget__close">&times;</span>
                                   <iframe id="a-pay-widget__iframe" src=${data.iframe_url} frameborder="0" height="652" width="100%"></iframe>
                                 </div>`;
 
@@ -73,4 +73,4 @@ class AsadalPayWidgetInstance {
   }
 }
 
-window.AsadalPayWidget = AsadalPayWidgetInstance;
+window.AsadalPayWidgetInstance;
