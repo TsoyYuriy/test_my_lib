@@ -15,7 +15,7 @@ const closeApayModal = () => {
 };
 
 
-class AsadalPayWidget {
+class AsadalPayWidgetInstance {
   constructor(configs) {
     this.apiKey = configs.api_key;
     this.orderInfo = configs.order_info;
@@ -73,4 +73,4 @@ class AsadalPayWidget {
   }
 }
 
-window.ApayWidget = AsadalPayWidget;
+window.AsadalPayWidget = AsadalPayWidgetInstance;
