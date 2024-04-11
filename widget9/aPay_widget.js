@@ -16,9 +16,9 @@ class AsadalPayWidgetInstance {
   }
 
   closeApayModal() {
-    aPayWidget.style.opacity = 0;
+    this.aPayWidget.style.opacity = 0;
     setTimeout(() => {
-      aPayWidget.style.visibility = "hidden";
+      this.aPayWidget.style.visibility = "hidden";
     }, 300);
   }
 
@@ -30,8 +30,8 @@ class AsadalPayWidgetInstance {
   }
 
   openApayWidget() {
-    aPayWidget.style.visibility = "visible";
-    aPayWidget.style.opacity = 1;
+    this.aPayWidget.style.visibility = "visible";
+    this.aPayWidget.style.opacity = 1;
 
     fetch("http://localhost:8000/api/orders/create-order", {
       method: "POST",
@@ -47,7 +47,7 @@ class AsadalPayWidgetInstance {
       })
       .then((data) => {
         console.log(data);
-        aPayWidget.innerHTML = `<div class="a-pay-widget__content" id="a-pay-widget__content">
+        this.aPayWidget.innerHTML = `<div class="a-pay-widget__content" id="a-pay-widget__content">
                                   <span class="a-pay-widget__close" id="a-pay-widget__close">&times;</span>
                                   <iframe id="a-pay-widget__iframe" src=${data.iframe_url} frameborder="0" height="652" width="100%"></iframe>
                                 </div>`;
