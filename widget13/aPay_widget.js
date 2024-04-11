@@ -7,7 +7,6 @@ class AsadalPayWidgetInstance {
 
     this.aPayWidget = document.getElementById("a-pay-widget");
     this.closeBtn = document.getElementById("a-pay-widget__close");
-    
   }
 
   closeApayModal() {
@@ -42,9 +41,9 @@ class AsadalPayWidgetInstance {
       .then((data) => {
         console.log(data);
         this.aPayWidget.innerHTML = `<div class="a-pay-widget__content" id="a-pay-widget__content">
-                                  <span class="a-pay-widget__close" id="a-pay-widget__close">&times;</span>
-                                  <iframe id="a-pay-widget__iframe" src=${data.iframe_url} frameborder="0" height="652" width="100%"></iframe>
-                                </div>`;
+                                      <span class="a-pay-widget__close" id="a-pay-widget__close">&times;</span>
+                                      <iframe id="a-pay-widget__iframe" src=${data.iframe_url} frameborder="0" height="652" width="100%"></iframe>
+                                    </div>`;
 
         window.addEventListener(
           "message",
