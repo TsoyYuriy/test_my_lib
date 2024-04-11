@@ -18,8 +18,13 @@ class AsadalPayWidgetInstance {
 
   closeApayWidget() {
     // var closeFrame = document.getElementById("a-pay-widget");
-    this.closeBtn.addEventListener("click", this.closeApayModal);
-    this.aPayWidget.addEventListener("click", this.closeApayModal);
+    // this.closeBtn.addEventListener("click", this.closeApayModal);
+    // this.aPayWidget.addEventListener("click", this.closeApayModal);
+    
+    if (this.aPayWidget) {
+      this.aPayWidget && this.aPayWidget.addEventListener("click", this.closeApayModal.bind(this))
+      this.aPayWidget.addEventListener("click", e => e.target === this.aPayWidget && this.closeApayModal());
+    }
   }
 
   openApayWidget() {
