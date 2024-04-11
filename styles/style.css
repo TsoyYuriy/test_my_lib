@@ -28,6 +28,11 @@
   font-size: 22px;
 }
 
+.active {
+  visibility: visible;
+  opacity: 1;
+}
+
 /* .a-pay-widget__close:hover,
 .a-pay-widget__close:focus {
   color: black;

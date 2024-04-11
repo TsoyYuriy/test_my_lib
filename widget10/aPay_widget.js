@@ -5,9 +5,8 @@ class AsadalPayWidgetInstance {
     this.isPaid = null;
     this.paymentCallback = null;
 
-    var aPayWidget = document.getElementById("a-pay-widget");
-
-    aPayWidget.style.cssText = `
+    this.aPayWidget = document.getElementById("a-pay-widget");
+    this.aPayWidget.style.cssText = `
       display: flex;
       visibility: hidden;
       opacity: 0;
