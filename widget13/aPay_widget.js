@@ -7,12 +7,7 @@ class AsadalPayWidgetInstance {
 
     this.aPayWidget = document.getElementById("a-pay-widget");
     this.closeBtn = document.getElementById("a-pay-widget__close");
-    // this.aPayWidget.style.cssText = `
-    //   display: flex;
-    //   visibility: hidden;
-    //   opacity: 0;
-    //   transition: opacity .3s ease-in-out;
-    // `;
+    
   }
 
   closeApayModal() {
