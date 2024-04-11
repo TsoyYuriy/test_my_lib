@@ -2,11 +2,9 @@
   position: fixed;
   inset: 0;
   background: rgba(0, 0, 0, 0.5);
-  display: flex;
   cursor: pointer;
   overflow: auto;
   display: none;
-  display: flex;
   visibility: hidden;
   opacity: 0;
   transition: opacity .3s ease-in-out;
