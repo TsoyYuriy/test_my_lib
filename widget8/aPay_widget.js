@@ -1,18 +1,18 @@
-var aPayWidget = document.getElementById("a-pay-widget");
-
-aPayWidget.style.cssText = `
-  display: flex;
-  visibility: hidden;
-  opacity: 0;
-  transition: opacity .3s ease-in-out;
-`;
-
 class AsadalPayWidgetInstance {
   constructor(configs) {
     this.apiKey = configs.api_key;
     this.orderInfo = configs.order_info;
     this.isPaid = null;
     this.paymentCallback = null;
+
+    var aPayWidget = document.getElementById("a-pay-widget");
+
+    aPayWidget.style.cssText = `
+      display: flex;
+      visibility: hidden;
+      opacity: 0;
+      transition: opacity .3s ease-in-out;
+    `;
   }
 
   closeApayModal() {
