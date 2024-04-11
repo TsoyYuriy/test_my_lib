@@ -6,12 +6,12 @@ class AsadalPayWidgetInstance {
     this.paymentCallback = null;
 
     this.aPayWidget = document.getElementById("a-pay-widget");
-    this.aPayWidget.style.cssText = `
-      display: flex;
-      visibility: hidden;
-      opacity: 0;
-      transition: opacity .3s ease-in-out;
-    `;
+    // this.aPayWidget.style.cssText = `
+    //   display: flex;
+    //   visibility: hidden;
+    //   opacity: 0;
+    //   transition: opacity .3s ease-in-out;
+    // `;
   }
 
   closeApayModal() {
@@ -23,9 +23,9 @@ class AsadalPayWidgetInstance {
 
   closeApayWidget() {
     var closeBtn = document.getElementById("a-pay-widget__close");
-    var closeFrame = document.getElementById("a-pay-widget");
+    // var closeFrame = document.getElementById("a-pay-widget");
     closeBtn.addEventListener("click", this.closeApayModal);
-    closeFrame.addEventListener("click", this.closeApayModal);
+    this.aPayWidget.addEventListener("click", this.closeApayModal);
   }
 
   openApayWidget() {
@@ -72,4 +72,4 @@ class AsadalPayWidgetInstance {
   }
 }
 
-window.CustomAsadalPayPaymentWidgetInstance = AsadalPayWidgetInstance;
+window.AsadalPayWidgetInstance = AsadalPayWidgetInstance;
