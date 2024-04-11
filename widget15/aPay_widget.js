@@ -4,7 +4,6 @@ class AsadalPayWidgetInstance {
     this.orderInfo = configs.order_info;
     this.isPaid = null;
     this.paymentCallback = null;
-
     this.aPayWidget = document.getElementById("a-pay-widget");
     this.closeBtn = document.getElementById("a-pay-widget__close");
   }
@@ -17,10 +16,6 @@ class AsadalPayWidgetInstance {
   }
 
   closeApayWidget() {
-    // var closeFrame = document.getElementById("a-pay-widget");
-    // this.closeBtn.addEventListener("click", this.closeApayModal);
-    // this.aPayWidget.addEventListener("click", this.closeApayModal);
-    
     if (this.aPayWidget) {
       this.aPayWidget && this.aPayWidget.addEventListener("click", this.closeApayModal.bind(this))
       this.aPayWidget.addEventListener("click", e => e.target === this.aPayWidget && this.closeApayModal());
@@ -44,7 +39,6 @@ class AsadalPayWidgetInstance {
         return response.json();
       })
       .then((data) => {
-        console.log(data);
         this.aPayWidget.innerHTML = `<div class="a-pay-widget__content" id="a-pay-widget__content">
                                       <span class="a-pay-widget__close" id="a-pay-widget__close">&times;</span>
                                       <iframe id="a-pay-widget__iframe" src=${data.iframe_url} frameborder="0" height="752" width="100%"></iframe>

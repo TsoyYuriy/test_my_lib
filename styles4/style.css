@@ -30,18 +30,6 @@
   font-size: 22px;
 }
 
-.active {
-  visibility: visible;
-  opacity: 1;
-}
-
-/* .a-pay-widget__close:hover,
-.a-pay-widget__close:focus {
-  color: black;
-  text-decoration: none;
-  cursor: pointer;
-} */
-
 @media screen and (max-width: 700px) {
   .a-pay-widget__content {
     width: 70%;
