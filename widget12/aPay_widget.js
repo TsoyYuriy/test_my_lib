@@ -6,6 +6,7 @@ class AsadalPayWidgetInstance {
     this.paymentCallback = null;
 
     this.aPayWidget = document.getElementById("a-pay-widget");
+    this.closeBtn = document.getElementById("a-pay-widget__close");
     // this.aPayWidget.style.cssText = `
     //   display: flex;
     //   visibility: hidden;
@@ -22,9 +23,8 @@ class AsadalPayWidgetInstance {
   }
 
   closeApayWidget() {
-    var closeBtn = document.getElementById("a-pay-widget__close");
     // var closeFrame = document.getElementById("a-pay-widget");
-    closeBtn.addEventListener("click", this.closeApayModal);
+    this.closeBtn.addEventListener("click", this.closeApayModal);
     this.aPayWidget.addEventListener("click", this.closeApayModal);
   }
 
