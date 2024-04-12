@@ -25,6 +25,9 @@ class AsadalPayWidgetInstance {
   openApayWidget() {
     this.aPayWidget.style.visibility = "visible";
     this.aPayWidget.style.opacity = 1;
+    this.aPayWidget.innerHTML = `<div class="a-pay-widget__content" id="a-pay-widget__content">
+                                  <div class="Spinner"></div>
+                                </div>`;
 
     fetch("http://localhost:8000/api/orders/create-order", {
       method: "POST",
