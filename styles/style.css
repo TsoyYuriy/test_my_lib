@@ -19,6 +19,7 @@
   margin: auto;
   cursor: default;
   border-radius: 15px;
+  min-height: 752px;
 }
 
 .a-pay-widget__close {
